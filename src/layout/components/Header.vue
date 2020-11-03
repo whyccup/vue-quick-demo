@@ -22,10 +22,11 @@
 
 <style lang="scss" scoped>
   #header {
+    height: 60px;
     .fixed {
       position: fixed;
       width: 100%;
-      padding: $defaultPadding;
+      padding: 0 $defaultPadding;
       background-color: #FFF;
       box-shadow: $defaultShadow;
       .loyout {

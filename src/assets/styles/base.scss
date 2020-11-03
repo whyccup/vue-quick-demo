@@ -3,7 +3,7 @@ $bgGrey: #F3F3F3;
 // 通用shadow
 $defaultShadow: 0px 3px 5px 0px rgba($color: #000000, $alpha: 0.2);
 // 通用padding
-$defaultPadding: 0 135px;
+$defaultPadding: 135px;
 
 // 字体
 $defaultFont: Avenir, Helvetica, Arial, sans-serif;
@@ -74,6 +74,5 @@ $historyTitleFontSize: 24px;
 $historyTitleColor: #ccc;
 $historyItemFontSize: 12px;
 $historyItemColor: #999;
-$historyItemHoverColor: $hoverColor;
 
 

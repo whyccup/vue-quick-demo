@@ -26,5 +26,6 @@ export default {
 <style lang="scss">
   #layout {
     min-height: 100%;
+    display: flex;
   }
 </style>

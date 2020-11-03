@@ -8,10 +8,15 @@ const routes = [{
   path: '/',
   component: layout,
   children: [{
-    path: '',
-    name: 'hoem',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
-  }]
+      path: '',
+      name: 'home',
+      component: () => import( /* webpackChunkName: "home" */ '@/views/Home.vue')
+    },
+    {
+      path: '*',
+      redirect: 'home'
+    }
+  ]
 }]
 
 // TODO 区分手机和pc
@@ -19,7 +24,7 @@ const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     return {
       x: 0,
       y: 0

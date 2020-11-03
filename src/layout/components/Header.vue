@@ -1,22 +1,52 @@
 <template>
-
+  <div id="header">
+    <div class="fixed">
+      <div class="loyout">
+        <img src="@/assets/logo/logo.svg" alt="log">
+        <avator></avator>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+  import avator from '@/components/Avator.vue'
 
-export default {
-  name: 'Header',
-  data () {
-    return {
+  export default {
+    name: 'Header',
+    components: {
+      avator
     }
-  },
-  methods: {
-
   }
-}
-
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+  #header {
+    .fixed {
+      position: fixed;
+      width: 100%;
+      padding: $defaultPadding;
+      background-color: #FFF;
+      box-shadow: $defaultShadow;
+      .loyout {
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+        &::before {
+          content: '';
+          display: inline-block;
+        }
+        img {
+          width: 100px;
+          height: 35px;
+        }
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      height: 60px;
+    }
+  }
 </style>

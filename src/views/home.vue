@@ -5,11 +5,9 @@
 </template>
 
 <script>
-  import sort from "@/layout/mixins/sort.js";
 
   export default {
-    name: "mHome",
-    mixins: [sort],
+    name: "home",
     data() {
       return {
         value: "",
@@ -58,8 +56,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~@/styles/variables.scss";
-  @import "~@/styles/mixin.scss";
 
   #m_index {
     height: 100%;
@@ -115,7 +111,7 @@
       button {
         height: 100%;
         font-size: 16px;
-        color: $themeColor;
+        // color: $themeColor;
         line-height: 22px;
         border: none;
         border-radius: 0 6px 6px 0;
@@ -148,12 +144,12 @@
         }
 
         &:hover {
-          color: $themeColor;
+          // color: $themeColor;
           cursor: pointer;
         }
 
         &:active {
-          color: $themeColor;
+          // color: $themeColor;
         }
       }
     }
@@ -181,15 +177,15 @@
         height: 14px;
         font-size: 10px;
         font-weight: 400;
-        color: $themeColor;
+        // color: $themeColor;
         line-height: 14px;
         text-decoration: underline;
       }
     }
 
     #pdf {
-      @include bg-image("pdf", "svg");
-      color: $themeColor;
+      // @include bg-image("pdf", "svg");
+      // color: $themeColor;
     }
   }
 

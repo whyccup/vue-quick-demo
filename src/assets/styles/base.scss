@@ -1,7 +1,9 @@
-// 主色
-$primaryColor: #F3F3F3;
 // 背景色
-$bgGrey: #E1E4E6;
+$bgGrey: #F3F3F3;
+// 通用shadow
+$defaultShadow: 0px 3px 5px 0px rgba($color: #000000, $alpha: 0.2);
+// 通用padding
+$defaultPadding: 0 135px;
 
 // 字体
 $defaultFont: Avenir, Helvetica, Arial, sans-serif;
@@ -10,6 +12,7 @@ $defaultColor: #2D4054;
 $hoverColor: #00B4CF;
 // 字体大小
 $defaultFontSize: 14px;
+
 
 // building 背景色
 $buildColor: #FF9A2A;
@@ -38,11 +41,13 @@ $sidebarItemHeight: 45px;
 // 侧边栏 icon 大小
 $sidebarIconFontSize: 20px;
 
-// 标签大小
-$tagFontSize: 16px;
+// 图标大小
+$iconFontSize: 16px;
 
 // 徽章大小
 $badgesFontSize: 14px;
+$badgesColor: #E1E4E6;
+
 
 // 统计组件
 $statisTitleFontSize: 12px;
@@ -58,7 +63,7 @@ $avatarSelectColor: #EFEFEF;
 
 // popup组件
 $popupWidth: 570px;
-$popupShadow: 0 3 5px rgba(0, 0, 0, 0.3);
+$popupShadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
 
 // listItme组件
 $listItemIconMainSize: 80px;

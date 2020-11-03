@@ -44,10 +44,5 @@
         }
       }
     }
-    &::after {
-      content: '';
-      display: block;
-      height: 60px;
-    }
   }
 </style>

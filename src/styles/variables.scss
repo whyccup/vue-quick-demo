@@ -1,0 +1,74 @@
+// 主色
+$primaryColor: #F3F3F3;
+// 背景色
+$bgGrey: #E1E4E6;
+
+// 字体
+$defaultFont: Avenir, Helvetica, Arial, sans-serif;
+// 字体颜色
+$defaultColor: #2D4054;
+$hoverColor: #00B4CF;
+// 字体大小
+$defaultFontSize: 14px;
+
+// building 背景色
+$buildColor: #FF9A2A;
+$buildAnimation: animation rotate 2s/r;
+// idle 背景色
+$idleColor: #7FBC39;
+$idleTitleFontSize: 18px;
+$idleTitleWeight: bold;
+$idleIconSize: 144px;
+$idleIconOpacity: 0.2;
+$idleNumberFontSize: 48px;
+
+// 主按钮色
+$primaryButtonColor: $hoverColor;
+$primaryButtonActiveColor: #01869A;
+// 主按钮大小
+$primaryButtonFontSize: 14px;
+$primaryButtonHeight: 30px;
+// + icon 大小
+$primaryIconFontSize: 18px;
+
+// 侧边栏
+$sidebarColor: #2D4054;
+$sidebarActiveColor: #435466;
+$sidebarItemHeight: 45px;
+// 侧边栏 icon 大小
+$sidebarIconFontSize: 20px;
+
+// 标签大小
+$tagFontSize: 16px;
+
+// 徽章大小
+$badgesFontSize: 14px;
+
+// 统计组件
+$statisTitleFontSize: 12px;
+$statisNumberFontSize: 20px;
+
+// 菜单组件
+$menuHeight: 50px;
+$menuBorder: 3px soild $hoverColor; 
+
+// 头像组件
+$avatarHeight: 40px;
+$avatarSelectColor: #EFEFEF;
+
+// popup组件
+$popupWidth: 570px;
+$popupShadow: 0 3 5px rgba(0, 0, 0, 0.3);
+
+// listItme组件
+$listItemIconMainSize: 80px;
+$listItemFontSize: 14px;
+
+// history组件
+$historyTitleFontSize: 24px;
+$historyTitleColor: #ccc;
+$historyItemFontSize: 12px;
+$historyItemColor: #999;
+$historyItemHoverColor: $hoverColor;
+
+

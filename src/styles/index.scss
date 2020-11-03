@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+html {
+  background-color: $bgGrey;
+}
+
+body {
+  color: $primaryColor;
+  height: 100%;
+  padding: 0;
+  color: $defaultColor;
+  font-family: $defaultFont;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}

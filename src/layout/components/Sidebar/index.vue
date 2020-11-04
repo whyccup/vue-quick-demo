@@ -83,6 +83,7 @@
       color: $historyTitleColor;
       font-size: $historyTitleFontSize;
       margin: 20px 15px;
+      cursor: default;
     }
 
     ul {

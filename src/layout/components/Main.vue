@@ -1,7 +1,9 @@
 <template>
   <div id="main">
-    <sidebar></sidebar>
-    <router-view></router-view>
+    <div class="layout">
+      <sidebar></sidebar>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,11 @@ export default {
     bottom: 28px;
     left: 0;
     right: 0;
+    padding: 0 $defaultPadding;
+    .layout {
+      height: 100%;
+      display: flex;
+    }
   }
 
 </style>

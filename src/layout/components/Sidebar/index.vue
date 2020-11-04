@@ -69,13 +69,14 @@
 
 <style lang="scss" scoped>
   #sidebar {
+    height: 100%;
+    width: 270px;
+    min-width: 270px;
+    padding: 30px 0 20px 0;
+    margin-right: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    width: 270px;
-    padding: 30px 0 20px 0;
-    margin-left: $defaultPadding;
     background-color: $sidebarColor;
 
     .ulTitle {

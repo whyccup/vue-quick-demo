@@ -30,6 +30,7 @@
     box-shadow: $defaultShadow;
 
     .loyout {
+      min-width: 1170px;
       display: flex;
       height: 60px;
       justify-content: space-between;

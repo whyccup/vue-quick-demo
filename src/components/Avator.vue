@@ -40,6 +40,7 @@ export default {
 <style lang="scss" scoped>
     #avator {
       position: relative;
+      margin-right: 10px;
       cursor: pointer;
       .avatorButton {
         display: flex;

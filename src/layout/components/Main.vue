@@ -18,8 +18,11 @@ export default {
 
 <style lang="scss" scoped>
   #main {
-    height: 100%;
-    flex: 1;
+    position: absolute;
+    top: 60px;
+    bottom: 28px;
+    left: 0;
+    right: 0;
   }
 
 </style>

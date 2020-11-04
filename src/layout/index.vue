@@ -14,19 +14,6 @@ export default {
     fFooter: footer,
     fHeader: header,
     fMain: main
-  },
-  data () {
-    return {}
-  },
-  methods: {
   }
 }
 </script>
-
-<style lang="scss">
-  #layout {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-</style>

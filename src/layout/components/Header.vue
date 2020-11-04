@@ -1,10 +1,8 @@
 <template>
   <div id="header">
-    <div class="fixed">
-      <div class="loyout">
-        <img src="@/assets/logo/logo.svg" alt="log">
-        <avator></avator>
-      </div>
+    <div class="loyout">
+      <img src="@/assets/logo/logo.svg" alt="log">
+      <avator></avator>
     </div>
   </div>
 </template>
@@ -23,25 +21,28 @@
 <style lang="scss" scoped>
   #header {
     height: 60px;
-    .fixed {
-      position: fixed;
-      width: 100%;
-      padding: 0 $defaultPadding;
-      background-color: #FFF;
-      box-shadow: $defaultShadow;
-      .loyout {
-        display: flex;
-        height: 60px;
-        justify-content: space-between;
-        align-items: center;
-        &::before {
-          content: '';
-          display: inline-block;
-        }
-        img {
-          width: 100px;
-          height: 35px;
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 $defaultPadding;
+    background-color: #FFF;
+    box-shadow: $defaultShadow;
+
+    .loyout {
+      display: flex;
+      height: 60px;
+      justify-content: space-between;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+      }
+
+      img {
+        width: 100px;
+        height: 35px;
       }
     }
   }

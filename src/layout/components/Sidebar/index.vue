@@ -1,7 +1,7 @@
 <template>
   <div id="sidebar">
     <div class="items">
-      <sidebarItem v-for="(el, index) of menu" :key="index" :opts="el"></sidebarItem>
+      <sidebarItem v-for="(el, index) of menuForItem" :key="index" :opts="el" @siderBarItemClick="siderBarItemClick"></sidebarItem>
     </div>
     <div>
       <div class="ulTitle">History</div>
@@ -27,7 +27,7 @@
             name: 'dashboard'
           },
           {
-            icon: 'icon-sltemap',
+            icon: 'icon-sitemap',
             name: 'agent'
           },
           {
@@ -45,14 +45,24 @@
       history() {
         const history = sessionStorage.history
         return history ? JSON.parse(history) : []
+      },
+      menuForItem() {
+        const menu = [...this.menu]
+        // 检查哪个菜单现在是被选中状态
+        for (const el of menu) {
+          if (el.name.trim() === this.$route.name) el.active = true
+        }
+        return menu
       }
     },
     methods: {
       bubbleClick(e) {
-        console.log(e)
         const fullPath = e.target.textContent
         if (e.target.tagName === 'LI' && this.$route.fullPath !== fullPath) this.$router.push(fullPath)
-      }
+      },
+      siderBarItemClick(opts) {
+        console.log(opts)
+      } 
     }
   }
 </script>
@@ -81,12 +91,14 @@
         color: $historyItemColor;
         font-size: $historyItemFontSize;
         cursor: pointer;
-        margin-bottom: 12px;  
+        margin-bottom: 12px;
+
         span {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
+
         &:hover {
           color: $hoverColor;
         }

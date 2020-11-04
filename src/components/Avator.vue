@@ -59,6 +59,7 @@ export default {
       }
       .dropMenu{
         width: 140px;
+        z-index: 10;
         position: absolute;
         top: 50px;
         left: 50%;
@@ -72,9 +73,9 @@ export default {
           text-align: center;
           display: flex;
           align-items: center;
+          cursor: pointer;
           &:hover {
             background-color: $avatarSelectColor;
-            cursor: pointer;
           }
           .icon {
             width: $iconFontSize;

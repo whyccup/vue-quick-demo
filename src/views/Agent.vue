@@ -85,7 +85,6 @@
 
   #agent {
     flex: 1; // 因为main设置了flex
-    min-width: 857px;
     padding-top: 18px;
 
     .top {
@@ -198,7 +197,7 @@
         }
 
         .active {
-          color: $hoverColor;
+          color: $themeColor;
           border-bottom: $menuBorder;
         }
 
@@ -240,14 +239,9 @@
         }
 
         .active {
-          color: $hoverColor;
+          color: $themeColor;
         }
       }
     }
-
-    .content {
-
-    }
-
   }
 </style>

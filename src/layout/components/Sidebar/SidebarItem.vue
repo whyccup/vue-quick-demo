@@ -32,12 +32,15 @@ export default {
       margin-right: 15px;
     }
     &:hover {
-      color: $hoverColor;
+      color: $themeColor;
+    }
+    &:active {
+      background-color: $sidebarActiveColor;
     }
   }
 
   .active {
-    color: $hoverColor;
+    color: $themeColor;
     background-color: $sidebarActiveColor;
   }
 </style>

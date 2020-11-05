@@ -102,7 +102,7 @@
         }
 
         &:hover {
-          color: $hoverColor;
+          color: $themeColor;
         }
       }
     }

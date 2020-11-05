@@ -9,12 +9,12 @@ $defaultPadding: 135px;
 $defaultFont: Avenir, Helvetica, Arial, sans-serif;
 // 字体颜色
 $defaultColor: #2D4054;
-$hoverColor: #00B4CF;
+$themeColor: #00B4CF;
 // 字体大小
 $defaultFontSize: 14px;
 
 // 主按钮色
-$primaryButtonColor: $hoverColor;
+$primaryButtonColor: $themeColor;
 $primaryButtonActiveColor: #01869A;
 // 主按钮大小
 $primaryButtonFontSize: 14px;
@@ -52,7 +52,7 @@ $statisNumberFontSize: 20px;
 
 // 菜单组件
 $menuHeight: 50px;
-$menuBorder: 3px solid $hoverColor; 
+$menuBorder: 3px solid $themeColor; 
 
 // 头像组件
 $avatarHeight: 40px;

@@ -2,7 +2,7 @@
   <div id="avator" @click="() => {this.dropMenuSwitch = !this.dropMenuSwitch}">
     <div class="avatorButton">
       <div class="avatorImg">
-        <img src="@/assets/os_icons/cent_os.png" alt="avator">
+        <img src="@/assets/os_icons/centos.png" alt="avator">
       </div>
       <span class="icon icon-angle-up" v-show="dropMenuSwitch"></span>
       <span class="icon icon-angle-down" v-show="!dropMenuSwitch"></span>

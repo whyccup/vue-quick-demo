@@ -15,7 +15,11 @@
                 </label>
             </div>
             <div class="bottom">
-                <span class="icon icon-plus plus"></span>
+                <div class="popUpContent">
+                    <span class="icon icon-plus plus" @click="() => {popUp = !popUp}">
+                    </span>
+                    <popUpDialog :opts="data.resources" v-if="popUp" @close="() => {popUp = false}"></popUpDialog>
+                </div>
                 <div class="tag" v-for="(el, index) of data.resources" :key="index">
                     <span>{{el}}</span>
                     <span class="icon icon-trash"></span>
@@ -26,12 +30,18 @@
 </template>
 
 <script>
+    import popUpDialog from '@/components/PopUpDialog.vue'
+
     export default {
         name: 'AgentItem',
         props: ['opts'],
+        components: {
+            popUpDialog
+        },
         data() {
             return {
-                data: this.opts
+                data: this.opts,
+                popUp: false
             }
         },
         watch: {
@@ -72,6 +82,7 @@
                 justify-content: space-between;
                 align-content: center;
                 margin-bottom: 30px;
+                padding-right: 30px;
                 label {
                     &::before {
                         font-size: $iconFontSize;
@@ -80,15 +91,15 @@
                         opacity: 0.7;
                     }
                     span {
-                        margin-left: 12px;
+                        margin-left: 7px;
                     }
                 }
                 .name {
-                    color: $hoverColor;
+                    color: $themeColor;
                 }
                 .idle {
                     display: inline-block;
-                    color: $badgesColor;
+                    color: #FFF;
                     font-size: $badgesFontSize;
                     height: $badgesFontSize;
                     line-height: $badgesFontSize;
@@ -97,7 +108,7 @@
                 }
                 .building {
                     display: inline-block;
-                    color: $badgesColor;
+                    color: #FFF;
                     font-size: $badgesFontSize;
                     height: $badgesFontSize;
                     line-height: $badgesFontSize;
@@ -108,23 +119,30 @@
             .bottom {
                 display: flex;
                 align-items: center;
-                .plus {
-                    display: inline-block;
-                    width: 25px;
-                    height: 25px;
-                    line-height: 25px;
-                    text-align: center;
-                    color: #FFF;
-                    background-color: $primaryButtonColor;
-                    cursor: pointer;
+                .popUpContent {
+                    position: relative;
+                    .plus {
+                        display: inline-block;
+                        width: 25px;
+                        height: 25px;
+                        line-height: 25px;
+                        text-align: center;
+                        color: #FFF;
+                        background-color: $primaryButtonColor;
+                        font-size: $primaryIconFontSize;
+                        cursor: pointer;
+                        &:active {
+                            background-color: $primaryButtonActiveColor;
+                        }
+                    }
                 }
                 .tag {
                     padding: 2px 7px;
                     margin-left: 10px;
                     background-color: $listItemBgColor;
-                    cursor: pointer;
                     .icon {
                         margin-left: 8px;
+                        cursor: pointer;
                         &::before {
                             font-size: $iconFontSize;
                             position: relative;

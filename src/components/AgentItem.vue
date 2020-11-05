@@ -20,10 +20,13 @@
                     </span>
                     <popUpDialog :opts="data.resources" v-if="popUp" @close="() => {popUp = false}"></popUpDialog>
                 </div>
-                <div class="tag" v-for="(el, index) of data.resources" :key="index">
-                    <span>{{el}}</span>
-                    <span class="icon icon-trash"></span>
+                <div class="tagContainer">
+                    <div class="tag" v-for="(el, index) of data.resources" :key="index">
+                        <span>{{el}}</span>
+                        <span class="icon icon-trash"></span>
+                    </div>
                 </div>
+                <button class="deny" v-if="data.status === 'building'"><span class="icon icon-deny"></span> Deny</button>
             </div>
         </div>
     </div>
@@ -136,19 +139,39 @@
                         }
                     }
                 }
-                .tag {
-                    padding: 2px 7px;
-                    margin-left: 10px;
-                    background-color: $listItemBgColor;
-                    .icon {
-                        margin-left: 8px;
-                        cursor: pointer;
-                        &::before {
-                            font-size: $iconFontSize;
-                            position: relative;
-                            top: 1px;
-                        } 
+                .tagContainer {
+                    .tag {
+                        display: inline-block;
+                        padding: 2px 7px;
+                        margin-left: 10px;
+                        margin-bottom: 10px;
+                        background-color: $listItemBgColor;
+                        .icon {
+                            margin-left: 8px;
+                            cursor: pointer;
+                            &::before {
+                                font-size: $iconFontSize;
+                                position: relative;
+                                top: 1px;
+                            } 
+                        }
                     }
+                }
+                .deny {
+                    min-width: 90px;
+                    height: $primaryButtonHeight;
+                    line-height: $primaryButtonHeight;
+                    text-align: center;
+                    color: #FFF;
+                    outline: none;
+                    border: none;
+                    border-radius: 0;
+                    background-color: $themeColor;
+                    &:active {
+                        background-color: $primaryButtonActiveColor;
+
+                    }
+                    cursor: pointer;
                 }
             }
         }

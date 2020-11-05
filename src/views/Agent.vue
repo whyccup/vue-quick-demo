@@ -71,7 +71,12 @@
             "Firefox",
             "Safari",
             "Ubuntu",
-            "Chrome"
+            "Chrome",
+            "Ubuntu",
+            "Ubuntu",
+            "Ubuntu",
+            "Ubuntu",
+            "Ubuntu",
           ],
           "id": 1
         }]

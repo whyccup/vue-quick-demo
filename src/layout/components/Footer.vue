@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
   #footer {
     min-width: 1440px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -24,5 +24,6 @@ export default {
     font-size: 13px;
     box-shadow: 0px -3px 5px 0px rgba($color: #000000, $alpha: 0.2);;
     text-align: center;
+    background-color: #FFF;
   }
 </style>

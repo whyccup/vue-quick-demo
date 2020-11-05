@@ -43,20 +43,41 @@
         <span class="icon icon-th-list active"></span>
       </div>
     </div>
+    <div class="content">
+      <agentItem v-for="(el, index) of agentList" :key="index" :opts="el"></agentItem>
+    </div>
   </div>
 </template>
 
 <script>
+  import agentItem from '@/components/AgentItem'
 
   export default {
     name: "agent",
+    components: {
+      agentItem
+    },
     data() {
       return {
-        search: ''
+        search: '',
+        agentList: [{
+          "name": "bjstdmngbdr01.thoughtworks.com",
+          "os": "windows",
+          "status": "idle",
+          "type": "physical",
+          "ip": "192.168.1.102",
+          "location": "/var/lib/cruise-agent",
+          "resources": [
+            "Firefox",
+            "Safari",
+            "Ubuntu",
+            "Chrome"
+          ],
+          "id": 1
+        }]
       };
     }
   };
-
 </script>
 
 <style lang="scss" scoped>
@@ -66,9 +87,11 @@
     flex: 1; // 因为main设置了flex
     min-width: 857px;
     padding-top: 18px;
+
     .top {
       display: flex;
       justify-content: space-between;
+
       .block {
         display: inline-block;
         flex: 1;
@@ -79,6 +102,7 @@
         position: relative;
         overflow: hidden;
         cursor: default;
+
         .title {
           position: absolute;
           top: 18px;
@@ -87,6 +111,7 @@
           font-size: $topBlockTitleFontSize;
           font-weight: $topBlockTitleWeight;
         }
+
         .icon {
           position: absolute;
           bottom: -8px;
@@ -96,38 +121,46 @@
           font-size: $topBlockIconSize;
           opacity: $topBlockIconOpacity;
         }
+
         .number {
           position: absolute;
-          bottom:20px;
+          bottom: 20px;
           right: 25px;
           z-index: 2;
           font-size: $topBlockNumberFontSize;
         }
 
       }
+
       .build {
         background-color: $buildColor;
+
         .icon-with-anmaition {
           display: block;
         }
       }
+
       .idle {
         background-color: $idleColor;
       }
-      .statis{
+
+      .statis {
         margin: 0;
         background-color: #FFF;
         color: $defaultColor;
         display: flex;
         padding-top: 22px;
+
         .column {
           height: 100%;
           flex: 1;
+
           .th {
             margin-bottom: 35px;
             text-align: center;
             font-size: $statisTitleFontSize;
           }
+
           .cont {
             text-align: center;
             font-size: $statisNumberFontSize;
@@ -135,6 +168,7 @@
         }
       }
     }
+
     .menu {
       height: $menuHeight;
       padding-right: 25px;
@@ -143,10 +177,12 @@
       justify-content: space-between;
       align-items: center;
       background-color: #FFF;
+
       .left {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         .type {
           width: 82px;
           height: 50px;
@@ -154,26 +190,31 @@
           text-align: center;
           border-right: 1px solid $bgGrey;
           cursor: pointer;
+
           &:active {
             background-color: $bgGrey;
             opacity: 0.8;
           }
         }
+
         .active {
           color: $hoverColor;
           border-bottom: $menuBorder;
         }
+
         .search {
           height: 100%;
-          padding: 8px 8px; 
+          padding: 8px 8px;
           margin: 0px 30px;
           display: inline-flex;
           align-items: center;
           background-color: $bgGrey;
+
           .icon {
             font-size: $sidebarIconFontSize;
             margin-right: 10px;
           }
+
           input {
             border: none;
             outline: none;
@@ -182,24 +223,31 @@
           }
         }
       }
+
       .right {
         span {
           margin-right: 20px;
           font-size: $sidebarIconFontSize;
           cursor: pointer;
+
           &:last-child {
             margin: 0;
           }
+
           &:active {
             opacity: 0.8;
           }
         }
+
         .active {
           color: $hoverColor;
         }
       }
     }
-  
-  }
 
+    .content {
+
+    }
+
+  }
 </style>

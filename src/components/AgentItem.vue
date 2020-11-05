@@ -16,8 +16,7 @@
             </div>
             <div class="bottom">
                 <div class="popUpContent">
-                    <span class="icon icon-plus plus" @click="() => {popUp = !popUp}">
-                    </span>
+                    <span class="icon icon-plus plus" @click="() => {popUp = !popUp}"></span>
                     <popUpDialog :opts="data.resources" v-if="popUp" @close="() => {popUp = false}"></popUpDialog>
                 </div>
                 <div class="tagContainer">
@@ -26,7 +25,8 @@
                         <span class="icon icon-trash"></span>
                     </div>
                 </div>
-                <button class="deny" v-if="data.status === 'building'"><span class="icon icon-deny"></span> Deny</button>
+                <button class="deny" v-if="data.status === 'building'"><span class="icon icon-deny"></span>
+                    Deny</button>
             </div>
         </div>
     </div>
@@ -61,31 +61,35 @@
 </script>
 
 <style lang="scss" scoped>
-
     .agentItem {
         padding: 20px;
         margin-top: 18px;
         background-color: #FFF;
         display: flex;
+
         .logo {
             display: inline-block;
             width: 80px;
             height: 80px;
             margin-right: 40px;
+
             img {
                 width: 100%;
                 height: 100%;
             }
         }
+
         .content {
             flex: 1;
-            display:inline-block;
+            display: inline-block;
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 align-content: center;
                 margin-bottom: 30px;
                 padding-right: 30px;
+
                 label {
                     &::before {
                         font-size: $iconFontSize;
@@ -93,13 +97,16 @@
                         top: 1px;
                         opacity: 0.7;
                     }
+
                     span {
                         margin-left: 7px;
                     }
                 }
+
                 .name {
                     color: $themeColor;
                 }
+
                 .idle {
                     display: inline-block;
                     color: #FFF;
@@ -109,6 +116,7 @@
                     padding: 2px 7px;
                     background-color: $idleColor;
                 }
+
                 .building {
                     display: inline-block;
                     color: #FFF;
@@ -119,11 +127,14 @@
                     background-color: $buildColor;
                 }
             }
+
             .bottom {
                 display: flex;
                 align-items: center;
+
                 .popUpContent {
                     position: relative;
+
                     .plus {
                         display: inline-block;
                         width: 25px;
@@ -134,11 +145,13 @@
                         background-color: $primaryButtonColor;
                         font-size: $primaryIconFontSize;
                         cursor: pointer;
+
                         &:active {
                             background-color: $primaryButtonActiveColor;
                         }
                     }
                 }
+
                 .tagContainer {
                     .tag {
                         display: inline-block;
@@ -146,17 +159,20 @@
                         margin-left: 10px;
                         margin-bottom: 10px;
                         background-color: $listItemBgColor;
+
                         .icon {
                             margin-left: 8px;
                             cursor: pointer;
+
                             &::before {
                                 font-size: $iconFontSize;
                                 position: relative;
                                 top: 1px;
-                            } 
+                            }
                         }
                     }
                 }
+
                 .deny {
                     min-width: 90px;
                     height: $primaryButtonHeight;
@@ -167,14 +183,15 @@
                     border: none;
                     border-radius: 0;
                     background-color: $themeColor;
+
                     &:active {
                         background-color: $primaryButtonActiveColor;
 
                     }
+
                     cursor: pointer;
                 }
             }
         }
     }
-
 </style>

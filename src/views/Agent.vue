@@ -4,7 +4,7 @@
       <div class="block build">
         <span class="title">Building</span>
         <div class="icon">
-          <span class="icon-cog icon-with-anmaition anmaition-rotate"></span>
+          <img class="icon-with-anmaition anmaition-rotate" src="@/assets/font_icons/settings.png">
         </div>
         <span class="number">3</span>
       </div>

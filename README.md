@@ -14,3 +14,10 @@ npm run serve
 ```
 npm run build
 ```
+
+### mock-server
+```
+cb mock-server
+npm install
+npm start
+```

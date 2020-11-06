@@ -46,8 +46,8 @@
         },
         data() {
             return {
-                data: this.opts,
-                popUp: false
+                popUp: false,
+                data: this.opts
             }
         },
         watch: {
@@ -75,7 +75,7 @@
             },
             trash(trashString) {
                 const arry = this.data.resources
-                arry.splice(arry.findIndex(el => el === trashString)) // 删除相同的项
+                arry.splice(arry.findIndex(el => el === trashString), 1) // 删除相同的项
                 this.changeAgents(arry)
             }
         }

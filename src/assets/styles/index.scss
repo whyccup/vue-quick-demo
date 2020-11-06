@@ -9,6 +9,7 @@ body {
   background-color: $bgGrey;
   color: $defaultColor;
   font-family: $defaultFont;
+  overflow-y: hidden;
 }
 
 #app{

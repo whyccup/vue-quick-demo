@@ -1,6 +1,6 @@
 <template>
 <div class="shadowDialog">
-    <div class="dialog">
+    <div :class="uper ? 'dialog uper' : 'dialog'" ref="popUp">
             <span class="close icon-close" @click="cancel"></span>
             <div class="title">Separate multiple resource name whith commas</div>
             <div class="input"><input type="text" v-model="data"></div>
@@ -21,6 +21,7 @@
         data() {
             return {
                 data: this.opts,
+                uper: false
             }
         },
         methods: {
@@ -32,7 +33,29 @@
             },
             cancel() {
                 this.$emit('close')
+            },
+            // to do 这里要拿 provide inject 写个插件，跨层级获取到MainDom，再进行准确计算，以下是粗略计算
+            checkThisVisible () {
+                const itemDom = this.$refs.popUp 
+                // 可见区域顶部高度
+                const visibleTop = window.scrollY;
+                // 可见区域底部高度 = 滚动条高度 + 视窗高度
+                const visibleBottom = visibleTop + document.documentElement.clientHeight;
+                // 节点的中心高度
+                const realOffsetTop = this.getDomRealOffsetTop(itemDom)
+                const centerY = realOffsetTop + itemDom.offsetHeight
+                this.uper = centerY > visibleBottom
+            },
+            getDomRealOffsetTop(dom, offsetTop = 0) { // 递归获取元素的绝对位置
+                offsetTop += dom.offsetTop
+                if (dom.offsetParent.localName === 'body') return offsetTop
+                return this.getDomRealOffsetTop(dom.offsetParent, offsetTop) // 每次递归都要将值进行返回
             }
+        },
+        mounted() {
+            // 检查组件是否在视窗内
+            this.checkThisVisible()
+            
         },
         beforeDestroy() {
             this.data = null
@@ -45,7 +68,7 @@
         position: absolute;
         top: calc(100% + 18px) ;
         left: -18px;
-        z-index: 3;
+        z-index: $dialogZIndex;
         width: $popupWidth;
         border: 1px solid $themeColor;
         padding: 30px 13px 18px 18px;
@@ -135,6 +158,19 @@
         left: 0;
         right: 0;
         background-color: transparent;
-        z-index: 2;
+        z-index: $shadowZIndex;
+    }
+
+    .uper {
+        top: auto;
+        bottom: calc(100% + 18px);
+        &::before, &::after {
+            top: auto;
+            bottom: -18px;
+            transform: rotate(180deg);
+        }
+        &:after{
+            bottom: -16px;
+        }
     }
 </style>

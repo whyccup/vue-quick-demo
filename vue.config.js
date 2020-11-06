@@ -1,6 +1,7 @@
 const port = process.env.VUE_APP_PORT || process.env.npm_config_port || 9528 // dev port
 
 module.exports = {
+  publicPath: './',
   devServer: {
     port: port,
     open: true,

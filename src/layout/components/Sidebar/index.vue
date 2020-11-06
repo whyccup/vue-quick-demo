@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar">
+  <div id="sidebar" ref="skadl">
     <div class="items">
       <sidebarItem v-for="(el, index) of menuForItem" :key="index" :opts="el" @siderBarItemClick="siderBarItemClick"></sidebarItem>
     </div>
@@ -69,10 +69,8 @@
 
 <style lang="scss" scoped>
   #sidebar {
-    position: fixed;
-    top:60px;
-    bottom: 28px;
-    width: 270px;
+    margin-right: 30px;
+    width: 265px;
     padding: 30px 0 20px 0;
     display: flex;
     flex-direction: column;

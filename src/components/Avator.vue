@@ -59,7 +59,7 @@ export default {
       }
       .dropMenu{
         width: 140px;
-        z-index: 10;
+        z-index: $menuZIndex;
         position: absolute;
         top: 50px;
         left: 50%;

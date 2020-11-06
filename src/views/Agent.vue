@@ -43,7 +43,7 @@
         <span class="icon icon-th-list active"></span>
       </div>
     </div>
-    <div class="content">
+    <div class="litems">
       <agentItem v-for="(el, index) of agentList" :key="index" :opts="el"></agentItem>
     </div>
   </div>
@@ -79,7 +79,7 @@
 
   #agent {
     flex: 1; // 因为main设置了flex
-    padding-top: 18px;
+    padding: 18px 0;
 
     .top {
       display: flex;
@@ -88,7 +88,7 @@
       .block {
         display: inline-block;
         flex: 1;
-        min-width: 270px;
+        min-width: 265px;
         height: 115px;
         margin-right: 30px;
         color: #FFF;

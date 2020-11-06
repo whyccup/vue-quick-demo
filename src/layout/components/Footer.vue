@@ -14,8 +14,8 @@ export default {
 
 <style lang="scss" scoped>
   #footer {
-    min-width: 1440px;
-    position: absolute;
+    z-index: $fixedZindex;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;

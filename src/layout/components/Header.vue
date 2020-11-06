@@ -18,9 +18,9 @@
 
 <style lang="scss" scoped>
   #header {
+    z-index: $fixedZindex;
+    position: fixed;
     height: 60px;
-    min-width: 1440px;
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;

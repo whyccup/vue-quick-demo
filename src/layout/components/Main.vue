@@ -1,36 +1,36 @@
 <template>
-  <div id="main">
-      <sidebar></sidebar>
+  <div id="main" ref="mainDom">
       <router-view></router-view>
   </div>
 </template>
 
 <script>
-import sidebar from './Sidebar'
 
 export default {
-  name: 'Main',
-  components: {
-    sidebar
-  }
+  name: 'Main'
 }
+
 </script>
 
 <style lang="scss" scoped>
   #main {
-    min-width: 1440px;
-    position: absolute;
-    top: 60px;
-    bottom: 28px;
-    left: 0;
-    right: 0;
-    padding: 0 $defaultPadding;
-    display: flex;
-    overflow: auto;
-    &::before { // 给sidebar占位
-      content: '';
-      min-width: 270px;
-      margin-right: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    padding-right: 10px;
+    /*滚动条样式*/
+    &::-webkit-scrollbar {
+        width: 4px;    
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.2);
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 0;
+        background: rgba(0,0,0,0.1);
     }
   }
 

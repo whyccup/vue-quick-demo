@@ -51,6 +51,9 @@
 
 <script>
   import agentItem from '@/components/AgentItem'
+  import {
+    getAgentsList
+  } from '@/api/agent'
 
   export default {
     name: "agent",
@@ -60,27 +63,13 @@
     data() {
       return {
         search: '',
-        agentList: [{
-          "name": "bjstdmngbdr01.thoughtworks.com",
-          "os": "windows",
-          "status": "idle",
-          "type": "physical",
-          "ip": "192.168.1.102",
-          "location": "/var/lib/cruise-agent",
-          "resources": [
-            "Firefox",
-            "Safari",
-            "Ubuntu",
-            "Chrome",
-            "Ubuntu",
-            "Ubuntu",
-            "Ubuntu",
-            "Ubuntu",
-            "Ubuntu",
-          ],
-          "id": 1
-        }]
+        agentList: []
       };
+    },
+    created() {
+      getAgentsList().then(dt => {
+        this.agentList = dt
+      })
     }
   };
 </script>

@@ -5,7 +5,7 @@
             <div class="title">Separate multiple resource name whith commas</div>
             <div class="input"><input type="text" v-model="data"></div>
             <div class="buttonGroup">
-                <button class="add" @click="addResource">Add Resource</button>
+                <button class="add" @click="changeResource">Add Resource</button>
                 <button class="cancel" @click="cancel">Cancel</button>
         </div>
     </div>
@@ -23,18 +23,16 @@
                 data: this.opts,
             }
         },
-        watch: {
-            opts: (nVal) => {
-                this.data = nVal
-            }
-        },
         methods: {
-            addResource() {
-
+            changeResource() {
+                this.$emit('add', this.data)
             },
             cancel() {
                 this.$emit('close')
             }
+        },
+        beforeDestroy() {
+            this.data = null
         }
     }
 </script>

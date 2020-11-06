@@ -17,12 +17,12 @@
             <div class="bottom">
                 <div class="popUpContent">
                     <span class="icon icon-plus plus" @click="() => {popUp = !popUp}"></span>
-                    <popUpDialog :opts="data.resources" v-if="popUp" @close="() => {popUp = false}"></popUpDialog>
+                    <popUpDialog :opts="data.resources" v-if="popUp" @close="close" @add="changeAgents"></popUpDialog>
                 </div>
                 <div class="tagContainer">
                     <div class="tag" v-for="(el, index) of data.resources" :key="index">
                         <span>{{el}}</span>
-                        <span class="icon icon-trash"></span>
+                        <span class="icon icon-trash" @click.stop="trash(el)"></span>
                     </div>
                 </div>
                 <button class="deny" v-if="data.status === 'building'"><span class="icon icon-deny"></span>
@@ -34,6 +34,9 @@
 
 <script>
     import popUpDialog from '@/components/PopUpDialog.vue'
+    import {
+        changeAgents
+    } from '@/api/agent'
 
     export default {
         name: 'AgentItem',
@@ -55,6 +58,27 @@
         computed: {
             logo() {
                 return require(`@/assets/os_icons/${this.data.os}.png`)
+            }
+        },
+        methods: {
+            close() {
+                this.popUp = false
+            },
+            changeAgents(resourcesString) {
+                let resourcesArray = resourcesString.replace(/，/ig, ',').split(',') // 中文逗号转英文
+                resourcesArray = Array.from(new Set(resourcesArray)).filter(el => el && el.trim()) // 去重及空值
+                this.data = {
+                    ...this.data,
+                    ...{
+                        resources: resourcesArray
+                    }
+                } // 深拷贝让vue触发数据更新
+                changeAgents(this.data)
+            },
+            trash(trashString) {
+                const arry = this.data.resources
+                arry.splice(arry.findIndex(el => el === trashString)) // 删除相同的项
+                this.changeAgents(arry.join(','))
             }
         }
     }

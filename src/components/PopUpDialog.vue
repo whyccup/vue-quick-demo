@@ -25,7 +25,10 @@
         },
         methods: {
             changeResource() {
-                this.$emit('add', this.data)
+                let resourcesArray = this.data.replace(/，/ig, ',').split(',') // 中文逗号转英文
+                resourcesArray = Array.from(new Set(resourcesArray)).filter(el => el && el.trim()) // 去重及空值
+                this.$emit('add', resourcesArray) // 给父组件上报修改
+                this.data = resourcesArray.join(',') // 修改本组件值
             },
             cancel() {
                 this.$emit('close')

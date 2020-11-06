@@ -8,8 +8,21 @@
       "ip": "192.168.1.102",
       "location": "/var/lib/cruise-agent",
       "resources": [
-        "q'weqwe",
-        "dwee"
+        "1",
+        "2",
+        "3",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "32",
+        "31",
+        "123",
+        "12",
+        "231231231.23.12",
+        "23",
+        "23123"
       ],
       "id": 1
     },
@@ -21,10 +34,15 @@
       "ip": "192.168.1.80",
       "location": "/var/lib/cruise-agent",
       "resources": [
-        "Firefox",
-        "Safari",
-        "Ubuntu",
-        "Chromee"
+        "123223",
+        "2",
+        "3",
+        "21",
+        "1",
+        "23",
+        "12",
+        "31",
+        "12312"
       ],
       "id": 2
     },
@@ -51,8 +69,7 @@
       "resources": [
         "Firefox",
         "Safari",
-        "Ubuntu",
-        "Chrome"
+        "Ubuntu"
       ],
       "id": 4
     },

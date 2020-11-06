@@ -131,6 +131,7 @@
         .icon-with-anmaition {
           display: block;
         }
+        .icon { bottom: 0px;}
       }
 
       .idle {

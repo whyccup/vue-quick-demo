@@ -15,15 +15,15 @@
                 </label>
             </div>
             <div class="bottom">
-                <div class="popUpContent">
+                <div class="left">
                     <span class="icon icon-plus plus" @click="() => {popUp = !popUp}"></span>
-                    <popUpDialog :opts="data.resources" v-if="popUp" @close="close" @add="changeAgents"></popUpDialog>
-                </div>
-                <div class="tagContainer">
-                    <div class="tag" v-for="(el, index) of data.resources" :key="index">
-                        <span>{{el}}</span>
-                        <span class="icon icon-trash" @click.stop="trash(el)"></span>
+                    <div class="tags">
+                        <div class="tag" v-for="(el, index) of data.resources" :key="index">
+                            <span>{{el}}</span>
+                            <span class="icon icon-trash" @click.stop="trash(el)"></span>
+                        </div>
                     </div>
+                    <popUpDialog :opts="data.resources" v-if="popUp" @close="close" @add="changeAgents"></popUpDialog>
                 </div>
                 <button class="deny" v-if="data.status === 'building'"><span class="icon icon-deny"></span>
                     Deny</button>
@@ -64,13 +64,11 @@
             close() {
                 this.popUp = false
             },
-            changeAgents(resourcesString) {
-                let resourcesArray = resourcesString.replace(/，/ig, ',').split(',') // 中文逗号转英文
-                resourcesArray = Array.from(new Set(resourcesArray)).filter(el => el && el.trim()) // 去重及空值
+            changeAgents(resources) {
                 this.data = {
                     ...this.data,
                     ...{
-                        resources: resourcesArray
+                        resources
                     }
                 } // 深拷贝让vue触发数据更新
                 changeAgents(this.data)
@@ -78,7 +76,7 @@
             trash(trashString) {
                 const arry = this.data.resources
                 arry.splice(arry.findIndex(el => el === trashString)) // 删除相同的项
-                this.changeAgents(arry.join(','))
+                this.changeAgents(arry)
             }
         }
     }
@@ -155,13 +153,16 @@
             .bottom {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
 
-                .popUpContent {
+                .left {
                     position: relative;
+                    display: flex;
+                    align-items: center;
 
                     .plus {
                         display: inline-block;
-                        width: 25px;
+                        min-width: 25px;
                         height: 25px;
                         line-height: 25px;
                         text-align: center;
@@ -174,24 +175,26 @@
                             background-color: $primaryButtonActiveColor;
                         }
                     }
-                }
 
-                .tagContainer {
-                    .tag {
-                        display: inline-block;
-                        padding: 2px 7px;
-                        margin-left: 10px;
-                        margin-bottom: 10px;
-                        background-color: $listItemBgColor;
+                    .tags {
+                        line-height: 30px;
 
-                        .icon {
-                            margin-left: 8px;
-                            cursor: pointer;
+                        .tag {
+                            display: inline-block;
+                            padding: 0 7px;
+                            margin-left: 10px;
+                            background-color: $listItemBgColor;
+                            height: 20px;
+                            line-height: 20px;
+                            .icon {
+                                margin-left: 8px;
+                                cursor: pointer;
 
-                            &::before {
-                                font-size: $iconFontSize;
-                                position: relative;
-                                top: 1px;
+                                &::before {
+                                    font-size: $iconFontSize;
+                                    position: relative;
+                                    top: 1px;
+                                }
                             }
                         }
                     }

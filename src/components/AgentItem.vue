@@ -177,7 +177,7 @@
                     }
 
                     .tags {
-                        line-height: 30px;
+                        line-height: 25px;
 
                         .tag {
                             display: inline-block;

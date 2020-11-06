@@ -10,7 +10,7 @@ const routes = [{
   children: [{
       path: 'agent',
       name: 'agent',
-      component: () => import( /* webpackChunkName: "home" */ '@/views/Agent.vue'),
+      component: () => import( /* webpackChunkName: "Agent" */ '@/views/Agent.vue'),
     },
     {
       path: '*',

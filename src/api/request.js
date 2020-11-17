@@ -3,7 +3,7 @@ import axios from 'axios'
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  withCredentials: true, // 不同域下的XmlHttpRequest 响应，不论其Access-Control- header 设置什么值，都无法为它自身站点设置cookie值，除非它在请求之前将withCredentials 设为true。
+  withCredentials: true, // 不同域下的 XmlHttpRequest 响应，不论其 Access-Control-header 设置什么值，都无法为它自身站点设置 cookie 值，除非它在请求之前将 withCredentials 设为 true。
   timeout: 10000 // request timeout
 })
 
